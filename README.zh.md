@@ -49,6 +49,8 @@
 dsh plugin --profile web add dsh-forge
 ```
 
+重启 `dsh web` 后插件立即开始监听 `session/event`。安装会被自动验证：任何 `package.json` 中声明了 `dsh.bundle` 的依赖都会自动加入 profile 的 `dsh.profile.bundles` 层栈。
+
 ## 配置
 
 | 配置项 | 默认值 | 含义 |

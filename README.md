@@ -49,6 +49,8 @@ then install via the profile:
 dsh plugin --profile web add dsh-forge
 ```
 
+Restart `dsh web` — the plugin listens for `session/event` immediately. The install is verified automatically: any dependency whose `package.json` declares `dsh.bundle` joins the profile's `dsh.profile.bundles` layer stack.
+
 ## Configuration
 
 | Setting | Default | Meaning |
