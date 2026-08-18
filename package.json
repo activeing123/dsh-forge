@@ -50,6 +50,13 @@
     "plugin"
   ],
   "license": "MIT",
+  "scripts": {
+    "test": "node --test test/",
+    "check": "node --check lib/index.js && node --check lib/client.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.1"
   }
