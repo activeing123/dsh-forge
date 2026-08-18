@@ -24,7 +24,8 @@
     "lib/index.js",
     "lib/client.js",
     "README.md",
-    "README.zh.md"
+    "README.zh.md",
+    "examples/**/*.md"
   ],
   "keywords": [
     "dsh-plugin",
