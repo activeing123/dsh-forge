@@ -57,7 +57,17 @@ Restart `dsh web` — the plugin listens for `session/event` immediately. The in
 | --- | --- | --- |
 | `skillsDir` | `.dsh-forge/skills` | Where forged `SKILL.md` files are written (resolved per-session cwd). |
 
-(Config is passed through the plugin row's `config` block.)
+Config is passed through the plugin row's `config` block in the profile patch layer, e.g.:
+
+```yaml
+- insert:
+    - id: dsh-forge
+      name: dsh-forge
+      config:
+        skillsDir: '.dsh/skills'
+```
+
+Note: forged skills are also registered at runtime via `ctx.skills`, so they are visible to every live session regardless of the output directory. The filesystem copy persists them for the official `dsh-skill-filesystem` provider if the directory is within a discovered skills root (e.g. `<projectRoot>/.dsh/skills` or a `customSkillDirs` entry).
 
 ## How it works
 

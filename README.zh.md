@@ -57,7 +57,17 @@ dsh plugin --profile web add dsh-forge
 | --- | --- | --- |
 | `skillsDir` | `.dsh-forge/skills` | 锻造出的 `SKILL.md` 写入目录（按会话 cwd 解析）。 |
 
-（配置通过插件行的 `config` 块传入。）
+配置通过 profile patch 层插件行的 `config` 块传入，例如：
+
+```yaml
+- insert:
+    - id: dsh-forge
+      name: dsh-forge
+      config:
+        skillsDir: '.dsh/skills'
+```
+
+注意：锻造出的技能同时通过 `ctx.skills` 在运行时注册，因此无论输出目录如何，所有在线会话都能看到它们。文件系统副本用于持久化——若目录位于官方文件系统技能 provider 的发现根内（如 `<projectRoot>/.dsh/skills` 或 `customSkillDirs` 条目），重启后仍可被发现。
 
 ## 工作原理
 
