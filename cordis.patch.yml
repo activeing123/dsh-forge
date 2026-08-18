@@ -1,0 +1,8 @@
+# dsh-forge bundle patch — installs the plugin into a dsh profile
+# Format per the official bundle manifest:
+#   - insert:
+#       - id: dsh-forge
+#         name: dsh-forge
+- insert:
+    - id: dsh-forge
+      name: dsh-forge
