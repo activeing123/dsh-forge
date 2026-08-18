@@ -18,8 +18,16 @@
 
 - 🎯 **自动模式识别** — 相同规范化意图在 ≥2 个已完成会话中出现时自动触发锻造。
 - ⚒️ **手动锻造** — 内置 Web 锻造炉面板（`tool.view.cordis`，key `self`），提供"锻造当前会话"按钮和实时轨迹统计。
+- 🤖 **模型可见锻造工具** — 注册的 `forge_skill` 模型工具让 agent 本人在任务中途也能直接触发锻造。
 - 📦 **官方技能格式** — 写出带 YAML frontmatter（`name` / `description` / `whenToUse`）的 `SKILL.md`，与官方文件系统技能 provider 完全兼容。
 - 🔗 **零外部依赖** — 全部使用 harness 自身的 `session/event`、`ctx.llm`、`ctx.fs`、`ctx.skills`；无需云账号、不依赖任何私有资产。
+
+## 真实锻造产物
+
+本插件已从本次会话自身的轨迹锻造出两个真实技能——都已写入 `.dsh-forge/skills/` 并注册进运行时技能目录，端到端全链路验证通过：
+
+- [`forged-dsh-forge-plugin-implementation.SKILL.md`](examples/forged-dsh-forge-plugin-implementation.SKILL.md) — 从设计并构建 dsh-forge 本身的会话轨迹中蒸馏而来。
+- [`forged-resume-powershell-workflow.SKILL.md`](examples/forged-resume-powershell-workflow.SKILL.md) — 从一次恢复中断本地工作流的会话轨迹中蒸馏而来。
 
 ## 快速开始
 

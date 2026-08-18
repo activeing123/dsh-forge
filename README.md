@@ -18,8 +18,16 @@ A standalone agent can only *perform* tasks — it never sees the full session e
 
 - 🎯 **Automatic pattern detection** — same normalized first intent completed in ≥ 2 sessions triggers a forge automatically.
 - ⚒️ **Manual forge** — a Web client furnace panel (`tool.view.cordis`, key `self`) with a “forge current session” button and live trace statistics.
+- 🤖 **Agent-visible forge tool** — a registered `forge_skill` model tool lets the agent itself trigger a forge mid-task.
 - 📦 **Official skill format** — writes `SKILL.md` with YAML frontmatter (`name` / `description` / `whenToUse`), exactly what the official filesystem skill provider scans.
 - 🔗 **Zero external dependencies** — uses the harness's own `session/event`, `ctx.llm`, `ctx.fs`, and `ctx.skills`; no cloud account, no private assets.
+
+## Real forged output
+
+This plugin already forged two real skills from this session's own traces — both were written under `.dsh-forge/skills/` and registered into the runtime skill catalog, proving the full loop end-to-end:
+
+- [`forged-dsh-forge-plugin-implementation.SKILL.md`](examples/forged-dsh-forge-plugin-implementation.SKILL.md) — distilled from the session that designed and built dsh-forge itself.
+- [`forged-resume-powershell-workflow.SKILL.md`](examples/forged-resume-powershell-workflow.SKILL.md) — distilled from a session that resumed an interrupted local workflow.
 
 ## Quick start
 
